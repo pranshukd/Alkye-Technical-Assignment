@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tab_background_selector">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgTab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="center"
+        android:src="@drawable/ic_bookmark"
+        android:tint="@color/tab_tint_selector" />
+</androidx.constraintlayout.widget.ConstraintLayout>

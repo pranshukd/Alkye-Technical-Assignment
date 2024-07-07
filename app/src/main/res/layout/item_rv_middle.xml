@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="320dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="20dp"
+    android:background="@color/white"
+    app:cardElevation="0.1dp"
+    app:cardCornerRadius="25dp"
+    app:strokeWidth="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.45" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/car_top_img"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bookImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_book_open"
+            android:layout_marginStart="45dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/playImg"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/playImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_play"
+            android:layout_margin="20dp"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/black_circle_img"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            app:srcCompat="@drawable/black_circle"
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintBottom_toBottomOf="@id/txtTechnology"
+            app:layout_constraintTop_toTopOf="@id/txtTechnology"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTechnology"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/technology"
+            android:layout_marginStart="5dp"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/strawford_medium"
+            app:layout_constraintStart_toEndOf="@id/black_circle_img"
+            app:layout_constraintTop_toBottomOf="@id/playImg"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDescription"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            tools:text="Step Into Tomorrow: Exploring Spatial Computing’s Impact On Industries And The Metaverse!"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:maxLines="5"
+            android:ellipsize="end"
+            android:textSize="16sp"
+            android:layout_marginBottom="30dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/strawford_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvDate"
+            app:layout_constraintStart_toStartOf="@id/black_circle_img"
+            app:layout_constraintTop_toBottomOf="@id/black_circle_img"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:layout_marginStart="5dp"
+            android:textSize="12sp"
+            android:textColor="@color/grey"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/strawford_medium"
+            app:layout_constraintStart_toStartOf="@id/tvDescription"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

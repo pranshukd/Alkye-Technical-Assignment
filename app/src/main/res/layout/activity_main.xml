@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/landingScreen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            tools:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mainIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/app_icon" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aneeshSign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/aneeshImg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/mainIcon"
+                app:layout_constraintTop_toBottomOf="@id/mainIcon"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:srcCompat="@drawable/aneesh_bond_sign" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aneeshImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/mainIcon"
+                app:layout_constraintTop_toBottomOf="@id/aneeshSign"
+                app:srcCompat="@drawable/aneesh_bond" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainScreen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F2F2F2"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/headerIcon"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="58dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/app_icon" />
+
+            <EditText
+                android:id="@+id/search_bar_editText"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="20dp"
+                android:autofillHints="name"
+                android:background="@drawable/search_bar_bg"
+                android:drawableEnd="@drawable/ic_search"
+                android:fontFamily="@font/strawford_regular"
+                android:hint="@string/search_hint"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:paddingHorizontal="20dp"
+                android:textColorHint="@color/grey"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/headerIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/headerIcon" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/headerIcon"
+                app:layout_constraintTop_toBottomOf="@id/headerIcon"
+                tools:listitem="@layout/item_rv_top" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtRecentArticles"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="20dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/strawford_bold"
+                android:maxLines="3"
+                android:text="@string/recent_articles"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@id/rvTop"
+                app:layout_constraintTop_toBottomOf="@id/rvTop" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMiddle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/headerIcon"
+                app:layout_constraintTop_toBottomOf="@id/txtRecentArticles"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_rv_middle" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnViewAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/search_bar_bg"
+                android:elevation="1dp"
+                android:fontFamily="@font/strawford_medium"
+                android:paddingHorizontal="70dp"
+                android:paddingVertical="12dp"
+                android:text="@string/view_all"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvMiddle" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txtSocialConnect" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtSocialConnect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:elevation="1dp"
+                android:fontFamily="@font/strawford_bold"
+                android:paddingTop="60dp"
+                android:text="@string/social_connect"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@id/headerIcon"
+                app:layout_constraintTop_toBottomOf="@id/btnViewAll" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtStayUpdated"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="120dp"
+                android:elevation="1dp"
+                android:fontFamily="@font/strawford_regular"
+                android:text="@string/social_connect_desc"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/headerIcon"
+                app:layout_constraintTop_toBottomOf="@id/txtSocialConnect" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBottom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:paddingBottom="110dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/headerIcon"
+                app:layout_constraintTop_toBottomOf="@id/txtStayUpdated"
+                tools:listitem="@layout/item_rv_bottom" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_margin="20dp"
+            android:elevation="5dp"
+            app:tabGravity="center"
+            app:tabMinWidth="70dp"
+            app:tabBackground="@drawable/tab_background_selector"
+            app:tabIconTint="@color/tab_tint_selector"
+            android:visibility="gone"
+            app:tabPadding="10dp"
+            tools:visibility="visible"
+            app:tabRippleColor="@null"
+            app:tabUnboundedRipple="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/tab_bg"
+            app:tabIndicatorHeight="0dp"
+            app:tabMode="fixed" >
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:icon="@drawable/ic_book_open"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:icon="@drawable/ic_bookmark"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:icon="@drawable/ic_watch"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:icon="@drawable/ic_notification"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:icon="@drawable/ic_profile"/>
+
+        </com.google.android.material.tabs.TabLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
